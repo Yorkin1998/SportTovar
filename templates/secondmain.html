@@ -1,0 +1,191 @@
+{% extends 'buy/main.html' %}
+{% load static %}
+{% block title %}
+    Main Window
+{% endblock %}
+{% block hehe %}
+
+
+<div class="content-container row">
+        <div class="eight columns" style="width:65%">
+        <div class="row">
+            <div class="twelve columns">
+    <div class="slider-gallery slider slick-initialized slick-slider">
+          <div class="slick-list draggable">
+{#              <div class="slick-track" style="opacity: 1; width: 3750px;" data-pswp-uid="2">#}
+{#                  <div itemscope="" itemtype="http://schema.org/ImageGallery" class="slick-slide" data-slick-index="0" aria-hidden="true" style="transition: opacity 500ms ease 0s; width: 750px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0;" tabindex="-1">#}
+{#            <figure itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">#}
+
+{#                <a href="google.com" data-size="1500x1500" class="demo-gallery__img--main" tabindex="-1">#}
+              <img src="{{ object.img.url }}" style="width: auto;height: auto;">
+{#            </a>#}
+{#            </figure>#}
+{#         </div>#}
+{#              </div>#}
+          </div>
+        <button data-product="{{object.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+
+
+
+    </div>
+  </div>
+            <div>
+            {% for i in object.NAME.all %}
+                <style>
+            #{{ i.id }}myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #{{ i.id }}myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+                </style>
+                <div id="{{ i.id }}myModal" class="modal">
+                  <!-- The Close Button -->
+                  <span class="close" onclick="document.getElementById('{{ i.id }}myModal').style.display='none'">&times;</span>
+                  <!-- Modal Content (The Image) -->
+                  <img class="modal-content" id="img{{ i.id }}">
+                  <!-- Modal Caption (Image Text) -->
+                  <div id="caption"></div>
+                </div>
+            {% endfor %}
+    <div class="slider-thumbnail slider slick-initialized slick-slider">
+      <div class="slick-list draggable">
+          <div class="slick-track centered" style="opacity: 1; width: 375px; transform: translate3d(0px, 0px, 0px);" data-pswp-uid="3">
+
+              {% for i in object.NAME.all %}
+{#                  {% for j in i %}#}
+              <div class="thumbnail-{{ i.id }} active slick-slide slick-current slick-active" data-slick-index="{{ i.id }}" aria-hidden="false" style="width: 70px;" tabindex="0">
+{#                    {% endfor %}#}
+              <div class="wrap">
+                    <img src="{{ i.image.url }}" id="{{ i.id }}myImg" style=" border-radius: 5px;cursor: pointer;transition: 0.3s;">
+                </div>
+
+          </div>
+
+        {% endfor %}
+
+          </div>
+      </div>
+    </div>
+  </div>
+        </div>
+
+
+        </div>
+        <div class="four columns" style="width:35%">
+          <div id="detailRight">
+          <h1 itemprop="name">
+						<a href="#">
+							<span class="producer">{{ object.Brand }}</span>
+						</a>
+            <span class="productname">{{ object.name }}</span>
+          </h1>
+          <ul class="no-bullet productnumbers">
+            <li class="suppliernumber" itemprop="sku" content="HA5818"><span>Product no.</span> {{ object.id }}</li>
+          </ul>
+
+<!-- BUYBOX -->
+<!-- params|bsId=267309| -->
+          <div class="buybox">
+            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+              <!-- PRICE INFORMATION -->
+
+
+
+              <div class="price">
+                <span class="price">Price:{{ object.Price }}</span><br>
+                <meta itemprop="itemCondition" content="http://schema.org/NewCondition">
+                <meta itemprop="priceCurrency" content="EUR">
+								<meta itemprop="price" content="34.95">
+							</div>
+{#              <div class="priceinfo">incl. VAT, plus <a href="#" id="shippingCostModalButton">shipping costs</a></div>#}
+
+            </div>
+
+            <!-- VARIANTEN SELECTOR -->
+
+
+
+
+          </div><!-- /BUYBOX -->
+        </div>
+            <br><br>
+
+          <ul class="accordion">
+
+            <li>
+              <div class="title">
+                <h5>Product description</h5>
+              </div>
+              <div class="content" style="display: none;">
+                <p>{{ object.name }}</p>
+                        <table id="attributesTable" class="productAttributesTable twelve">
+          <colgroup>
+          <col class="productAttributesColName"><col class="productAttributesColValue">
+          </colgroup><tbody><tr class="odd"><td class="productAttributesName">Material:</td><td class="productAttributesValue"> 80% Cotton, 20% Polyester</td></tr>
+            <tr class="even"><td class="productAttributesName">Gender:</td><td class="productAttributesValue"> {{ object.type }}</td></tr>
+            <tr class="odd"><td class="productAttributesName">Color:</td><td class="productAttributesValue"> yellow</td></tr>
+            </tbody></table>                      </div>
+            </li>
+            <li>
+              <li>
+              <div class="title">
+                <h5>Size Guide</h5>
+              </div>
+              <div class="content" style="display: none;">
+                <p>Please check our<br><a id="sizeguideModalButton" style="cursor: pointer;"><b><u>size guide</u></b></a></p>
+              </div>
+            </li>
+            </li>
+            <li>
+              <div class="title">
+                <h5>Shipping &amp; Returns</h5>
+              </div>
+              <div class="content" style="display: none;">
+                <p><a href="/service/shipping"><u>Shipping</u></a></p>
+              </div>
+            </li>
+            <li>
+              <div class="title">
+                <h5>Help</h5>
+              </div>
+              <div class="content" style="display: none;">
+                <p>abdukhkhorov@mail.ru</p>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+</div>
+    <script>
+        {% for i in object.NAME.all %}
+        // Get the modal
+var modal = document.getElementById('{{ i.id }}myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('{{ i.id }}myImg');
+var modalImg = document.getElementById("img{{ i.id }}");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+        {% endfor %}
+    </script>
+    <script src="{% static '/js/productDetail.js' %}"></script>
+{#    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>#}
+{% endblock %}
+

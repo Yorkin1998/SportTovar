@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<div id="page-content">
+  <div class="row">
+    <div class="twelve columns">
+        <div class="bannerGrid">
+            <div class="row">
+                <div class="six mobile-four columns">
+                    <div class="t10"><a href="/new?filter=__brand_filterall__color_filterall__gender_men__style_filterall__price_slider.4.728__size_filterall&amp;page=1"><img src="{% static '/img/pp1.jpg' %}" alt="men"></a></div>
+                </div>
+                <div class="six mobile-four columns">
+                    <div class="t11"><a href="/new?filter=__brand_filterall__color_filterall__gender_women__style_filterall__price_slider.4.728__size_filterall&amp;page=1"><img src="{% static '/img/pp2.jpg' %}" alt="women"></a></div>
+                </div>
+            </div>
+        </div>
+    <div class="bannerTop">
+        <div class="row">
+            <div class="twelve columns">
+                <div class="t0"><a href="/sale"><img src="{% static '/img/oo3.jpg' %}" alt="sale"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="bannerGrid">
+        <div class="row">
+            <div class="six mobile-four columns">
+                 <div class="t10"><a href="{% url 'footwear_man' slug='all' %}"><img src="{% static '/img/pp3.jpg' %}" alt="footwear"></a></div>
+            </div>
+        <div class="six mobile-four columns">
+             <div class="t11"><a href="/apparel"><img src="{% static '/img/pp5.jpg' %}" alt="apparel"></a></div>
+        </div>
+        </div>
+    </div>
+    </div>
+  </div>
+    <div class="row">
+        <div class="three mobile-two columns">
+            <div class="t6"><a href="/brands/new-balance"><img src="{% static '/img/newbalance.jpg' %}" alt="nb"></a></div>
+        </div>
+        <div class="three mobile-two columns">
+            <div class="t7"><a href="{% url 'nike_brands' slug='nike' %}"><img src="{% static '/img/nike.jpg' %}" alt="nike"></a></div>
+        </div>
+        <div class="three mobile-two columns">
+            <div class="t8"><a href="/brands/dr-martens"><img src="{% static '/img/drmartens.jpg' %}" alt="dr-martens"></a></div>
+        </div>
+        <div class="three mobile-two columns">
+            <div class="t9"><a href="/brands/asics"><img src="{% static '/img/asics.jpg' %}" alt="asics"></a></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="six mobile-four columns">
+            <div class="t10"><a href="{% url 'Jackets_for_all' slug='north_face' %}"><img src="{% static '/img/pp6.jpg' %}" alt="tnf"></a></div>
+        </div>
+        <div class="six mobile-four columns">
+            <div class="t11"><a href="{% url 'nike_brands' slug='lacoste' %}"><img src="{% static '/img/pp8.jpg' %}" alt="puma"></a></div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        {% for i in object_list %}
+            <a href="{{ i.get_absolute_url }}" style="flex: 33.3%;padding: 5px;">
+            <img src="{{ i.img.url }}"  style="display: flex; max-width: 100%;max-height: 100%;" alt="Snow"><br>
+            <h1 align="center">{{ i.name }}</h1>
+            <h2 align="center">{{ i.Price }} so`m</h2>
+            </a>
+        {% endfor %}
+        </div>
+    <div class="mt-4 bg bg1" >
+        <center>
+             {% include 'situations/paginaet.html' %}
+        </center>
+        </div>
+    <script type="text/javascript" src="{% static '/js/vanilla-tilt.js' %}"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".rasm_uchun ,.t11,.t10"), {
+        max: 25,
+        speed: 400,
+      });
+    </script>
+
+  </div>
+
+
+{% endblock %}

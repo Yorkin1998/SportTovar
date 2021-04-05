@@ -1,0 +1,170 @@
+{% load static %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<footer id="page-footer">
+    <div class="inner">
+
+
+  <div class="row">
+    <div class="six columns">
+      <h4>sneakAvenue Store</h4>
+      <img src="{% static '/img/footer_store.jpg' %}" alt="sneakAvenue Store Bratislava">
+    </div>
+    <div class="five columns">
+      <h4>Social Media</h4>
+        <section id="socialRow">
+    <div>
+      <div class="twelve columns text-center" >
+        <ul class="socialIcons">
+            <li class="">
+
+                    <a href="https://www.facebook.com/sneakavenue" target="_blank">
+                        <span>
+                            <i class="fab fa-facebook"></i>
+                        </span>
+
+                    </a>
+            </li>
+            <li class="">
+                <a href="https://twitter.com/sneakAvenue" target="_blank">
+                    <span>
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="http://instagram.com/sneakAvenue" target="_blank">
+                    <span>
+                        <i class="fab fa-instagram"></i>
+                    </span>
+
+                </a>
+            </li>
+            <li class="">
+                <a href="https://www.sneak-a-venue.com/blog/" target="_blank">
+                   <span>
+                       <i class="fab fa-telegram-plane"></i>
+                   </span>
+
+                </a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+      <h4>Newsletter</h4>
+          <div class="row">
+      <div class="twelve columns">
+          <form id="newsletter" name="newsletter" method="post" action="/info/newsletter">
+        <div class="row collapse">
+          <div class="eight columns">
+            <input type="text" placeholder="signup@example.com" name="newsletter[email]">
+          </div>
+          <div class="four columns">
+            <input type="submit" value="Register" class="button primary small expand postfix radius">
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve mobile-four columns text-left consent">
+            <div class="">
+              <label for="newsletter_consent_newsletter">
+                <input type="checkbox" name="newsletter[consent_newsletter]" value="newsletter_accept_newsletter_privacy" id="newsletter_consent_newsletter">
+                I agree that newsletters may be sent to the email address provided and that my data can be collected, processed and used in accordance with the <a href="/legal/data-privacy">Privacy Policy</a>. By registering to receive the newsletter, I agree that personalised user profiles may be created to better tailor the advertising and websites with my personal interests. This consent may be withdrawn at any time.              </label>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="eight columns centered navigationSection">
+      <div>
+        <div class="four columns">
+        <h5>Service</h5>
+          <ul class="no-bullet ns_service">
+            <li class="">
+              <a href="/service/shipping">Shipping &amp; Delivery</a>
+            </li>
+            <li class="">
+              <a href="/service/payment">Payment methods</a>
+            </li>
+            <li class="">
+              <a href="/service/returns">Return Policy</a>
+            </li>
+            <li class="">
+              <a href="/service/size-chart">Size Chart</a>
+            </li>
+            <li class="">
+              <a href="/service/vouchers">Vouchers</a>
+            </li>
+          </ul>
+        </div>
+        <div class="four columns">
+<h5>Legal Act</h5>
+          <ul class="no-bullet ns_rechtliches">
+            <li class="">
+              <a href="/legal/gtc">Terms and Conditions</a>
+            </li>
+            <li class="">
+              <a href="/legal/data-privacy">Data Privacy</a>
+            </li>
+            <li class="">
+              <a href="/legal/online-dispute-resolution">Online Dispute Resolution</a>
+            </li>
+            <li class="">
+              <a href="/legal/right-of-withdrawal">Right of Withdrawal</a>
+            </li>
+            <li class="">
+              <a href="/legal/imprint">Imprint</a>
+            </li>
+          </ul>        </div>
+        <div class="four columns">
+<h5>Information</h5>
+          <ul class="no-bullet ns_informationen">
+            <li class="">
+              <a href="/info/contact">Contact</a>
+            </li>
+            <li class="">
+              <a href="/info/store">sneakAvenue Store</a>
+            </li>
+            <li class="">
+              <a href="/info/press">Press</a>
+            </li>
+            <li class="">
+              <a href="/info/newsletter">Newsletter</a>
+            </li>
+          </ul>        <ul class="no-bullet ns_informationen affiliate">
+          <li><a href="http://www.webgains.de/front/publisher/program/view/programID/10267" rel="nofollow" target="_blank">Affiliate</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+    <div class="footer_info">
+      <div class="row">
+        <div class="twelve columns text-center">
+          <ul class="footer_icons">
+            <li><img src="{% static '/img/payme.jpg' %}" alt="visa"></li>
+            <li><img src="{% static '/img/apelsin.jpg' %}" alt="mastercard"></li>
+            <li><img src="{% static '/img/click.jpg' %}" alt="paypal"></li>
+{#                        <li><img src="/images/payment-icon_sofort.png" alt="sofort"></li>#}
+{#                                                            <li><img src="/images/payment-icon_alipay.png" alt="Alipay"></li>#}
+{#                        <li><img src="/images/shipping-icon_dhl.png" alt="DHL"></li>#}
+{#            <li><img src="/images/shipping-icon_fedex.png" alt="FEDEX"></li>#}
+{#            <li><img src="/images/shipping-icon_gls.png" alt="GLS"></li>#}
+
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns text-center">
+                                              <p>All prices include VAT. VAT plus <a href="/service/shipping">Shipping &amp; Delivery</a> and possibly shipping fees unless otherwise stated. <br>** RRP = Recommended retail price, * original price</p>
+          <p>© 2021 sneakAvenue, All rights reserved.<br>Made with <span class="icon-heart" style="font-size:12px;"></span> by 3MO eSolutions</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+

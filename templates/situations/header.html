@@ -1,0 +1,309 @@
+{% load static %}
+{#    <div class="main-banner bg" id="home">#}
+{##}
+{#</div>#}
+{#<br>#}
+{#{% for i in  %}#}
+{#{% endfor %}#}
+<header id="page-header">
+    <div>
+      <div class="twelve columns text-center">
+        <a class="openPrimaryNav show-for-small" href="#">
+          <button class="show-for-small lines-button x" type="button" role="button">
+            <span class="lines"></span>
+          </button>
+        </a>
+        <a href="/" >
+          <img class="page-title" src="{% static '/img/logo-sneak-a-venue.svg' %}">
+{#            <i class="fas fa-shopping-bag page-title"></i>#}
+        </a>
+<div class="reviewWidget hide-for-small">
+  <ul>
+    <li><a href="https://www.trustedshops.de/bewertung/info_XA9281139A17D28711F5F51150251995A.html" target="_blank"><img src="{% static '/img/kauferschutz.png' %}" alt="Trusted Shops"></a></li>
+    <li><a href="https://www.google.com/shopping/customerreviews/merchantreviews?q=sneak-a-venue.com" target="_blank"><img src="{% static '/img/review-icon_google.png' %}" alt="Google Customer Review"></a></li>
+  </ul>
+</div>
+
+        <div id="metaNav">
+          <ul>
+              <li class="language-selector hide-for-small">
+                <a class="current en" href="#">
+                   <div class="flag">
+                       <img src="{% static '/img/en.png' %}" alt="en">
+                   </div>
+                   English         </a>
+                <div class="dropdown">
+                  <ul>
+
+                    <li><a href="/ru"><span class="flag ru"></span> Russian</a></li>
+                    <li><a href="/uz"><span class="flag uz"></span> Uzbek</a></li>
+
+                  </ul>
+                </div>
+              </li>
+
+              <li class="account">
+{#                  <i class="fas fa-sign-in-alt"> <span class="name">Login</span></i>#}
+                  <a href="#" class="quickLoginFormRevealButton" data-animation="none">
+{#                    <span class="icon icon-account"></span>#}
+                      <div class="flag">
+                       <img src="{% static 'img/en.png' %}" alt="en">
+                   </div>
+
+                    <span class="name">Login</span>
+                  </a>
+              </li>
+            <li class="cart" id="cartPreview">
+              <a class="empty" href="/cart/">
+{#                <span class="icon icon-bag"></span> #}
+                  <div class="flag">
+                       <img src="{% static 'img/en.png' %}" alt="en">
+                   </div>
+                  <span class="name">Cart</span> <span class="count">0</span>          </a>
+            </li>
+          </ul>
+        </div>      </div>
+   </div>
+  </header>
+ <nav id="mainnav">
+  <div class="row snbl hide-for-small">
+    <div class="twelve columns">
+      <ul class="nav-bar-custom">
+        <li class="new ">
+          <a href="/new">NEW</a>
+        </li>
+        {#   BRENDLA      #}
+        <li class="brands has-dropdown">
+          <a href="/brands">Brands</a>
+          <div class="dropdown" style="display: none;">
+
+              <div class="inner">
+
+                  <ul class="block-grid four-up mobile-two-up producerlist">
+                    <li>
+                      <a href="{% url 'nike_brands' slug='nike' %}">Nike</a>
+                        <br>
+                        <hr>
+                      <a href="{% url 'nike_brands' slug='adidas' %}">Adidas</a>
+                         <br>
+                        <hr>
+                      <a href="{% url 'nike_brands' slug='puma' %}">Puma</a>
+
+                    </li>
+                  </ul>
+            </div>
+
+          </div>
+        </li>
+        <li class="cat-item cat-item-4 has-children has-dropdown"><a href="/footwear">Footwear</a>
+          <div class="dropdown" style="display: none;">
+            <div class="inner">
+              <div class="row">
+                <div class="three columns">
+                  <ul class="no-bullet gender">
+                                                            <li><a rel="nofollow" href="/footwear/man/">Men</a></li>
+                    <li><a rel="nofollow" href="/footwear/women/">Women</a></li>
+                    <li><a rel="nofollow" href="/filtered/category/4/__gender_kids">Kids</a></li>
+                                                          </ul>
+                </div>
+                <div class="six columns">
+                  <h5 class="findyourstyle"><span>Find your style</span></h5>
+                  <div class="row">
+                <div class="six columns">
+                <ul>
+                    <li>
+                        <a href="{% url 'footwear_man' slug='nike_footers' %}">Nike Footwear</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'footwear_man' slug='adidas_footers' %}">Adidas Footwear</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'footwear_man' slug='puma_footers' %}">Puma Footwear</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'footwear_man' slug='fila_footers' %}">Fila Footwear</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'footwear_man' slug='new_balance_footers' %}">New Balance Footwear</a>
+                    </li>
+                </ul>
+                    <ul>
+
+                    </ul>
+                </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <h5>Categories</h5>
+                  <ul class="no-bullet category">
+                                        <li class="cat-item cat-item-25 no-children">
+                        <a href="{% url 'footwear_man' slug='snaekers' %}" data-animation="none">Sneaker</a>
+                      </li>
+                      <li class="cat-item cat-item-26 no-children">
+                        <a href="/footwear/boots" data-animation="none">Boots</a>
+                      </li>
+                      <li class="cat-item cat-item-27 no-children">
+                        <a href="/footwear/slides-und-sandals" data-animation="none">Slides &amp; Sandals</a>
+                      </li>
+                      <li class="cat-item cat-item-28 no-children">
+                        <a href="/footwear/vegan" data-animation="none">Vegan</a>
+                      </li>
+                      <li class="cat-item cat-item-29 no-children">
+                        <a href="/footwear/casual" data-animation="none">Casual</a>
+                      </li>
+                      <li class="cat-item cat-item-32 no-children">
+                        <a href="/footwear/outdoor" data-animation="none">Outdoor</a>
+                      </li>
+                  </ul>
+                </div>
+
+{#                <div class="three columns">#}
+{#                  <h5>Categories</h5>#}
+{#                  <ul class="no-bullet category">#}
+{#                                        <li class="cat-item cat-item-25 no-children">#}
+{#                        <a href="/footwear/sneaker" data-animation="none">Sneaker</a>#}
+{#                      </li>#}
+{#                      <li class="cat-item cat-item-26 no-children">#}
+{#                        <a href="/footwear/boots" data-animation="none">Boots</a>#}
+{#                      </li>#}
+{#                      <li class="cat-item cat-item-27 no-children">#}
+{#                        <a href="/footwear/slides-und-sandals" data-animation="none">Slides &amp; Sandals</a>#}
+{#                      </li>#}
+{#                      <li class="cat-item cat-item-28 no-children">#}
+{#                        <a href="/footwear/vegan" data-animation="none">Vegan</a>#}
+{#                      </li>#}
+{#                      <li class="cat-item cat-item-29 no-children">#}
+{#                        <a href="/footwear/casual" data-animation="none">Casual</a>#}
+{#                      </li>#}
+{#                      <li class="cat-item cat-item-32 no-children">#}
+{#                        <a href="/footwear/outdoor" data-animation="none">Outdoor</a>#}
+{#                      </li>#}
+{#                  </ul>#}
+{#                </div>#}
+              </div>
+              <div class="row">
+                <div class="twelve columns text-center showall">
+                  <a href="/footwear">Show all</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="cat-item cat-item-12 has-children has-dropdown"><a href="/apparel">Apparel</a>
+          <div class="dropdown" style="display: none;">
+            <div class="inner">
+              <div class="row">
+                <div class="four columns">
+                  <div class="submenu">
+                    <ul class="no-bullet">
+                      <li class="cat-item cat-item-15 no-children">
+                        <a href="{% url 'Tshirts_for_all' slug='t-shirts' %}" data-animation="none">T-Shirts</a>
+                      </li>
+                      <li class="cat-item cat-item-21 no-children">
+                        <a href="{% url 'Tshirts_for_all' slug='Longsleeves' %}" data-animation="none">Longsleeves</a>
+                      </li>
+                      <li class="cat-item cat-item-19 no-children">
+                        <a href="/apparel/tops" data-animation="none">Tops</a>
+                      </li>
+                      <li class="cat-item cat-item-24 no-children">
+                        <a href="/apparel/shirts" data-animation="none">Shirts</a>
+                      </li>
+                      <li class="cat-item cat-item-16 no-children">
+                        <a href="/apparel/crewnecks" data-animation="none">Crewnecks</a>
+                      </li>
+                      <li class="cat-item cat-item-13 no-children">
+                        <a href="/apparel/hoodies" data-animation="none">Hoodies</a>
+                      </li>
+                      <li class="cat-item cat-item-14 no-children">
+                        <a href="/apparel/jackets" data-animation="none">Jackets</a>
+                      </li>
+                      <li class="cat-item cat-item-20 no-children">
+                        <a href="/apparel/tracksuits" data-animation="none">Tracksuits</a>
+                      </li>
+                      <li class="cat-item cat-item-22 no-children">
+                        <a href="/apparel/vests" data-animation="none">Vests</a>
+                      </li>
+                      <li class="cat-item cat-item-23 no-children">
+                        <a href="/apparel/shorts" data-animation="none">Shorts</a>
+                      </li>
+                      <li class="cat-item cat-item-18 no-children">
+                        <a href="/apparel/pants" data-animation="none">Pants</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="eight columns">
+                  <img src="{% static '/img/apparel.jpg' %}">
+                </div>
+              </div>
+              <div class="row">
+                <div class="twelve columns text-center showall">
+                  <a href="/apparel">Show all</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="cat-item cat-item-5 has-children has-dropdown"><a href="/accessories">Accessories</a>
+          <div class="dropdown" style="display: none;">
+            <div class="inner">
+              <div class="row">
+                <div class="four columns">
+                  <div class="submenu">
+                    <ul class="no-bullet">
+                      <li class="cat-item cat-item-6 no-children">
+                        <a href="/accessories/books" data-animation="none">Books</a>
+                      </li>
+                      <li class="cat-item cat-item-9 no-children">
+                        <a href="/accessories/headwear" data-animation="none">Headwear</a>
+                      </li>
+                      <li class="cat-item cat-item-11 no-children">
+                        <a href="/accessories/laces" data-animation="none">Laces</a>
+                      </li>
+                      <li class="cat-item cat-item-7 no-children">
+                        <a href="/accessories/shoe-care" data-animation="none">Shoe care</a>
+                      </li>
+                      <li class="cat-item cat-item-10 no-children">
+                        <a href="/accessories/socks" data-animation="none">Socks</a>
+                      </li>
+                      <li class="cat-item cat-item-17 no-children">
+                        <a href="/accessories/bags-und-backpacks" data-animation="none">Bags &amp; Backpacks</a>
+                      </li>
+                      <li class="cat-item cat-item-31 no-children">
+                        <a href="/accessories/various" data-animation="none">Various</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="eight columns">
+                  <img src="{% static '/img/accessories.jpg' %}">
+                </div>
+              </div>
+              <div class="row">
+                <div class="twelve columns text-center showall">
+                  <a href="/accessories">Show all</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+          <li class="sale ">
+          <a href="/sale">SALE</a>
+        </li>
+                      </ul>
+      <div class="searchHeader">
+        <form id="pageSearchDesktop" name="searchbar" action="/search" method="get">
+          <div class="row">
+            <div class="twelve columns">
+              <input id="search_word" type="text" placeholder="Search" name="searchstring" value="" autocomplete="off" class="searchterm inputtext" data-url="/en/renderSecureComponent/search/autocomplete">
+            </div>
+          </div>
+          <div id="searchResultContainer"></div>
+          <div class="focusOnSearch"></div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</nav>
+

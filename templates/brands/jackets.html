@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %} MAIN {% endblock %}
+{% block content %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+{#    <div class="row brand-header">#}
+{#      <div class="twelve columns">#}
+{##}
+{#      <h1><span>{{  }}</span></h1>#}
+{#                  <div class="three columns text-center">#}
+{#                    <img src="{{ aaa.img.url }}">#}
+{#                  </div>#}
+{#            <p>{{ aaa.description|safe}}</p>#}
+{##}
+{##}
+{#              </div>#}
+{##}
+{#    </div>#}
+
+    <div class="row">
+    {% for i in page_obj %}
+            <a href="{{ i.get_absolute_url }}" style="flex: 33.3%;padding: 5px;">
+            <img src="{{ i.img.url }}"  style="display: flex; max-width: 100%;max-height: 100%;" alt="Snow"><br>
+            <h1 align="center">{{ i.name }}</h1>
+            <h2 align="center">{{ i.Price }} so`m</h2>
+            </a>
+    {% endfor %}
+    </div>
+
+{#    <div class="mt-4 bg bg1" >#}
+{#        <center>#}
+{#             {% include 'situations/paginaet.html' %}#}
+{#        </center>#}
+{#    </div>#}
+    <ul class="pagination">
+    {% if page_obj.has_previous %}
+        {% if page_obj.number|add:'-3' > 1 %}
+            <li class="pagination__item">
+{#                <a href="?{{ q }}{{ genre }}{{ year }}page=1">1</a>#}
+            </li>
+        {% endif %}
+        {% if page_obj.number|add:'-3' >= 3 %}
+            <li class="pagination__item pagination__item--dots">
+{#                    <a href="?{{ q }}{{ genre }}{{ year }}page={{ page_obj.previous_page_number|add:'-3' }}">#}
+                <span class="pagination__link">• • •</span>
+                </a>
+            </li>
+        {% endif %}
+    {% endif %}
+    {% if paginator.page_range|length > 1 %}
+        {% for i in paginator.page_range %}
+            {% if page_obj.number == i %}
+                <li class="pagination__item active">
+                    <a class="pagination__link" href="#">{{ i }}</a>
+                </li>
+            {% elif i > page_obj.number|add:'-4' and i < page_obj.number|add:'4' %}
+                <li class="pagination__item">
+                        <a class="pagination__link" href="?{{ q }}{{ genre }}{{ year }}page={{ i }}">{{ i }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    {% if page_obj.has_next %}
+        {% if page_obj.number|add:'4' < page_obj.paginator.num_pages %}
+            <li class="pagination__item pagination__item--dots">
+{#                    <a href="?{{ q }}{{ genre }}{{ year }}page={{ page_obj.next_page_number|add:'3' }}">#}
+                <span class="pagination__link">• • •</span>
+                </a>
+            </li>
+        {% endif %}
+        {% if page_obj.number|add:'3' < page_obj.paginator.num_pages %}
+            <li class="pagination__item">
+{#                    <a class="pagination__link" href="?{{ q }}{{ genre }}{{ year }}page={{ page_obj.paginator.num_pages }}">#}
+                        {{ page_obj.paginator.num_pages }}
+                    </a>
+            </li>
+        {% endif %}
+    {% endif %}
+</ul>
+{#        <div class="pagination">#}
+{#    <span class="step-links">#}
+{#        {% if page_obj.has_previous %}#}
+{#            <a href="?page=1">&laquo; 1 </a>#}
+{#            <a href="?page={{ page_obj.previous_page_number }}"></a>#}
+{#        {% endif %}#}
+{##}
+{#        <span class="current">#}
+{#             {{ page_obj.number }}#}
+{#        </span>#}
+{##}
+{#        {% if page_obj.has_next %}#}
+{#            <a href="?page={{ page_obj.next_page_number }}"></a>#}
+{#            <a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>#}
+{#        {% endif %}#}
+{#    </span>#}
+{#</div>#}
+
+
+
+{% endblock %}
